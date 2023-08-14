@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p id="test">Hello Hello</p>
+    <ul>
+        <li>Hello World</li>
+        <li>Hello World</li>
+        <li>Hello World</li>
+        <li>Hello World</li>
+        <li>Hello World</li>
+        <li>Hello World</li>
+        <li>Hello World</li>
+        <li>Hello World</li>
+        <li>Hello World</li>
+        <li>Hello World</li>
+    </ul>
+
+    <input type="text" name="" id="userInput">
+    <input type="text" name="" id="userInput2">
+    <p id="userInputPrint"></p>
+    <button>눌러!</button>
+    <div class="wrapper">
+        <h1 class="title">TITLE</h1>
+        <ul class="items">
+            <li class="items">item 1</li>
+            <li class="items">item 2</li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        $('#test').html('<b>Hello</b> World');
+        // eq = 3번째만 적용
+        // $('li').eq(3).css('color', 'red')
+        // gt = 3번째 초과부터 적용
+        // $('li:gt(3)').css('color', 'red');
+        // lt = 3번째 미만부터 적용
+        // $('li:lt(3)').css('color', 'red');
+        $('li:nth-child(3n)').css('color', 'red');
+        $("button").click(function()
+        {
+            const value = $("#userInput").val();
+            $("#userInput2").val(value);
+            $("#userInputPrint").text(value);
+        });
+        // ul태그의 부모를 one으로 변경
+        $("ul").parent().append('one');
+        // div태그의 자식을 two로 변경
+        //$("div").children().append('two');
+        // div태그의 첫번째를 three로 변경
+        //$("div").first().text('three');
+        // dom 수정
+        console.log($("div").children()[0].innerText = 'helo world');
+    </script>
+</body>
+</html>
